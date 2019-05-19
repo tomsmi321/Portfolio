@@ -1,3 +1,73 @@
-body {
-    background-color: aqua;
+/* Global variables */
+:root {
+    /* Colors */
+    --main-black-background: #222725;
+    --main-white-background: #FFFBFE;
+    --red-line: #FF656C;
+    --text-black: #000000;
+    --text-white: #FFFBFE;
+    /* Fonts types*/
+    --main-font: 'Roboto', sans-serif;
+    --main-heading-font: 'Raleway', sans-serif;
+    /* Font sizes */
+    --h1-heading-size: 3em;
+    --h2-subheading-size: 2em;
+    --h3-subheading-size: 1.5em;
+    --p-body-size: 1em;
 }
+
+/* Remove inbuilt padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+/* default styling for h1, h2 and <p> elements */
+h1 {
+    font-size: var(--h1-heading-size);
+}
+
+h2 {
+    font-size: var(--h2-subheading-size);
+}
+
+p {
+    font-size: var(--p-body-size);
+}
+
+/* make the homepage art svg take up the whole screen */
+.home-art-container {
+    width: 100%;
+    background: var(--main-white-background);
+    margin: 0 auto;
+}
+
+/* Required to make image fluid in IE */
+.main-img:not(.png) {
+    width: 100%;
+}
+
+.main-img {
+    padding-top: 3rem;
+}
+
+/* place nav items in flexbox */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--main-white-background)
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-family: var(--main-font);
+    font-weight: 200;
+    font-size: var(--h3-subheading-size);
+}
+
