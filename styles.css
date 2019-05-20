@@ -38,7 +38,51 @@ p {
     font-size: var(--p-body-size);
 }
 
-/* make the homepage art svg take up the whole screen */
+/* --SITE WRAPPER--- */
+.site-wrapper {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "home"
+        "about"
+        "projects"
+        "skills"
+        "contact";
+
+}
+
+/* ----------HEADER WITH NAVIGATION---------- */
+header {
+    grid-area: header;
+}
+
+/* place nav items in flexbox */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--main-white-background);
+}
+
+/* style nav items */
+.nav a {
+    text-decoration: none;
+    color: var(--text-black);
+    font-family: var(--main-font);
+    font-weight: 300;
+    font-size: var(--h3-subheading-size);
+}
+
+/* ----------HOME---------- */
+.home {
+    grid-area: home;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--main-white-background);
+}
+
+/* Make the homepage art svg take up the whole container */
 .home-art-container {
     width: 100%;
     background: var(--main-white-background);
@@ -54,20 +98,93 @@ p {
     padding-top: 3rem;
 }
 
-/* place nav items in flexbox */
-.nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--main-white-background)
+/* ----------ABOUT---------- */
+.about {
+    background-color: var(--main-black-background);
+    grid-area: about;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-template-columns: 0.5fr, 0.5fr, 0.5fr, 1fr, 1fr, 1fr, 1fr, 0.5fr;
+    grid-template-rows: 0.5fr, 1fr, 0.5fr, 1fr, 1fr, 1fr, 0.5fr;
+    grid-template-areas:
+        ". h . . . . . ."
+        ". h . . . . . ."
+        ". h . s . . . ."
+        ". h . bd bd bd bd ."
+        ". h . . . . . ."
+        ". h . . . bx bx ."
+        ". h . . . . . .";
+
+    overflow: hidden;
 }
 
-.nav a {
-    text-decoration: none;
-    color: var(--text-black);
+.about-header {
+    color: var(--text-white);
     font-family: var(--main-font);
-    font-weight: 200;
-    font-size: var(--h3-subheading-size);
+    font-weight: 400;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    align-self: center;
+    padding: 2em;
+    grid-area: h;
 }
 
+.about-subheading {
+    color: var(--text-white);
+    font-size: 1.2em;
+    font-family: var(--main-font);
+    font-weight: 400;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    grid-area: s;
+}
+
+.about-body {
+    color: var(--text-white);
+    font-family: var(--main-font);
+    font-weight: 400;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    grid-area: bd;
+}
+
+.about-box {
+    color: var(--text-white);
+    border: 3px solid #FFFBFE;
+    font-family: var(--main-font);
+    font-weight: 400;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    grid-area: bx;
+}
+
+/* ----------PROJECTS---------- */
+.projects {
+    grid-area: projects;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--main-white-background);
+}
+
+.projects-heading {
+    width: 327px;
+    background: var(--main-white-background);
+    /* margin: 0 auto; */
+}
+
+/* ----------KILLS---------- */
+.skills {
+    grid-area: skills;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--main-black-background);
+}
+
+/* ----------CONTACT---------- */
+.contact {
+    grid-area: contact;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--main-white-background);
+}
