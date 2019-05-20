@@ -220,18 +220,51 @@ header {
     min-height: 100vh;
     min-width: 100vw;
     background-color: var(--main-black-background);
+    display: grid;
+    grid-template-columns: 125px 0.3fr 1fr 0.5fr 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr 1fr 0.5fr 125px;
+    grid-template-areas: 
+        "rs . h h h ."
+        "rs . f . b ."
+        "rs . f . s ."
+        "rs . . . . ."
+        "rs rb rb rb rb rb";
 }
 
 .skills-heading{
+    grid-area: h;
+    color: var(--text-white);
+    padding-top: 2em;
+}
 
+.skills-front{
+    grid-area: f;
+    color: var(--text-white);
 }
 
 .skills-back{
-
+    grid-area: b;
+    color: var(--text-white);
+    justify-self: end;
+}
+.square {
+    grid-area: s;
+    width: 150px;
+    height: 150px;
+    background-color: var(--main-white-background);
+    justify-self: end;
 }
 
-.block{
-    
+.rectangle-side {
+    grid-area: rs;
+    margin: 0;
+    background-color: var(--main-white-background);
+}
+
+.rectangle-bottom{
+    grid-area: rb;
+    margin: 0;
+    background-color: var(--main-white-background);
 }
 
 /* ----------CONTACT---------- */
@@ -239,5 +272,5 @@ header {
     grid-area: contact;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: var(--main-white-background);
+    background-color: var(--main-black-background);
 }
