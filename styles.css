@@ -3,7 +3,7 @@
     /* Colors */
     --main-black-background: #222725;
     --main-white-background: #FFFBFE;
-    --red-line: #FF656C;
+    --red-line: #FF525A;
     --text-black: #000000;
     --text-white: #FFFBFE;
     /* Fonts types*/
@@ -168,8 +168,8 @@ header {
     background-color: var(--main-white-background);
     display: grid;
     grid-template-columns: 0.5fr, 2fr, 1fr, 0.5fr;
-    grid-template-rows: 0.5fr, 1fr, 1fr, 1fr, 1fr, 0.5fr ;
-    grid-template-areas: 
+    grid-template-rows: 0.5fr, 1fr, 1fr, 1fr, 1fr, 0.5fr;
+    grid-template-areas:
         ". . . ."
         ". . pc ."
         ". p1 . ."
@@ -178,7 +178,7 @@ header {
         ". . . .";
 }
 
-.projects-heading-container{
+.projects-heading-container {
     grid-area: pc;
     padding-right: 2em;
     padding-top: 2em;
@@ -186,7 +186,7 @@ header {
 
 .project1 {
     grid-area: p1;
-    border-left: 0.8em solid #FF656C;
+    border-left: 0.8em solid #FF525A;
     margin-left: 2em;
     margin-bottom: 3em;
     margin-top: 1em;
@@ -195,7 +195,7 @@ header {
 
 .project2 {
     grid-area: p2;
-    border-left: 0.8em solid #FF656C;
+    border-left: 0.8em solid #FF525A;
     margin-left: 2em;
     margin-bottom: 3em;
     padding-left: 0.2em;
@@ -203,7 +203,7 @@ header {
 
 .project3 {
     grid-area: p3;
-    border-left: 0.8em solid #FF656C;
+    border-left: 0.8em solid #FF525A;
     margin-left: 2em;
     margin-bottom: 2em;
     padding-left: 0.2em;
@@ -223,7 +223,7 @@ header {
     display: grid;
     grid-template-columns: 125px 0.3fr 1fr 0.5fr 1fr 1fr;
     grid-template-rows: 0.8fr 1fr 1fr 0.5fr 125px;
-    grid-template-areas: 
+    grid-template-areas:
         "rs . h h h ."
         "rs . f . b ."
         "rs . f . s ."
@@ -231,22 +231,23 @@ header {
         "rs rb rb rb rb rb";
 }
 
-.skills-heading{
+.skills-heading {
     grid-area: h;
     color: var(--text-white);
     padding-top: 2em;
 }
 
-.skills-front{
+.skills-front {
     grid-area: f;
     color: var(--text-white);
 }
 
-.skills-back{
+.skills-back {
     grid-area: b;
     color: var(--text-white);
     justify-self: end;
 }
+
 .square {
     grid-area: s;
     width: 150px;
@@ -261,7 +262,7 @@ header {
     background-color: var(--main-white-background);
 }
 
-.rectangle-bottom{
+.rectangle-bottom {
     grid-area: rb;
     margin: 0;
     background-color: var(--main-white-background);
@@ -273,4 +274,19 @@ header {
     min-height: 100vh;
     min-width: 100vw;
     background-color: var(--main-black-background);
+}
+
+
+
+
+.linkdin-container {
+    width: 5em;
+}
+
+.github-container {
+    width: 5em;
+}
+
+.codepen-container {
+    width: 5em;
 }

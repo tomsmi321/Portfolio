@@ -112,7 +112,41 @@
         <div class="rectangle-side"></div>
         <div class="rectangle-bottom"></div>
     </section>
-    <section class="contact" id="contact"></section>
+    <section class="contact" id="contact">
+        <div class="form-container">
+            <form name="contact" method="POST" data-netlify="true">
+                <p>
+                    <label>Your Name: <input type="text" name="name" /></label>
+                </p>
+                <p>
+                    <label>Your Email: <input type="email" name="email" /></label>
+                </p>
+                <p>
+                    <label>Your Role: <select name="role[]" multiple>
+                            <option value="leader">Leader</option>
+                            <option value="follower">Follower</option>
+                        </select></label>
+                </p>
+                <p>
+                    <label>Message: <textarea name="message"></textarea></label>
+                </p>
+                <p>
+                    <button type="submit">Send</button>
+                </p>
+            </form>
+        </div>
+
+
+        <div class="linkdin-container">
+            <img class="linkdin-img" src="./assets/linkdin-img.svg">
+        </div>
+        <div class="github-container">
+            <img class="github-img" src="./assets/github-img.svg">
+        </div>
+        <div class="codepen-container">
+            <img class="codepen-img" src="./assets/codepen-img.svg">
+        </div>
+    </section>
 </body>
 
 </html>
