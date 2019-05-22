@@ -273,20 +273,126 @@ header {
     grid-area: contact;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: var(--main-black-background);
+    background-color: var(--main-white-background);
+    display: grid;
+    grid-template-columns: 1fr 0.5fr max-content 1fr max-content 1fr 1.5fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-areas: 
+        ". . . . . . ."
+        ". h cf cf cf cf ."
+        ". . li . gh cp ."
+        ". . . . . . .";
 }
 
 
+.contact-form {
+    grid-area: cf;
+    display: flex;
+    flex-direction: row;
+    width: 550px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+}
+
+.input-fields,
+.msg {
+    width: 48%;
+}
+
+.input-fields .input,
+.msg textarea {
+    margin: 10px 0;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid #c5ecfd;
+    padding: 10px;
+    color: #c5ecfd;
+    width: 100%;
+}
+
+.msg textarea {
+    height: 212px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #c5ecfd;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #c5ecfd;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #c5ecfd;
+}
+
+.btn {
+    background: #ffa42d;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-form {
+        flex-direction: column;
+        width: 250px;
+    }
+
+    .msg textarea {
+        height: 80px;
+    }
+
+    .input-fields,
+    .msg {
+        width: 100%;
+    }
+}
+
+.contact-heading {
+    grid-area: h;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg); 
+    align-self: center;
+}
 
 .linkdin-container {
-    width: 5em;
+    grid-area: li;
+    width: 4em;
+    padding-top: 2em;
 }
 
 .github-container {
-    width: 5em;
+    grid-area: gh;
+    width: 4em;
+    justify-self: end;
+    padding-top: 2em;
 }
 
 .codepen-container {
-    width: 5em;
+    grid-area: cp;
+    width: 4em;
+    justify-self: end;
+    padding-top: 2em;
+}
+
+.linkdin-img:hover, 
+.github-img:hover, 
+.codepen-img:hover {
+    transform: scale(1.3);
+    transition: .25s ease-in;
 }

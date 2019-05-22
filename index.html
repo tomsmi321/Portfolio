@@ -113,38 +113,36 @@
         <div class="rectangle-bottom"></div>
     </section>
     <section class="contact" id="contact">
-        <div class="form-container">
-            <form name="contact" method="POST" data-netlify="true">
-                <p>
-                    <label>Your Name: <input type="text" name="name" /></label>
-                </p>
-                <p>
-                    <label>Your Email: <input type="email" name="email" /></label>
-                </p>
-                <p>
-                    <label>Your Role: <select name="role[]" multiple>
-                            <option value="leader">Leader</option>
-                            <option value="follower">Follower</option>
-                        </select></label>
-                </p>
-                <p>
-                    <label>Message: <textarea name="message"></textarea></label>
-                </p>
-                <p>
-                    <button type="submit">Send</button>
-                </p>
-            </form>
+        <div class="contact-form">
+            <div class="input-fields">
+                <input type="text" class="input" placeholder="first name">
+                <input type="text" class="input" placeholder="last name">
+                <input type="text" class="input" placeholder="email">
+                <input type="text" class="input" placeholder="subject">
+            </div>
+            <div class="msg">
+                <textarea placeholder="message"></textarea>
+                <div class="btn">send</div>
+            </div>
         </div>
 
-
+        <div class="contact-heading">
+            <h1>contact.</h1>
+        </div>
         <div class="linkdin-container">
-            <img class="linkdin-img" src="./assets/linkdin-img.svg">
+            <a href="https://www.linkedin.com/in/thomas-smith-b57470163">
+                <img class="linkdin-img" src="./assets/linkdin-img.svg" alt="linkdin link">
+            </a>
         </div>
         <div class="github-container">
-            <img class="github-img" src="./assets/github-img.svg">
+            <a href="https://github.com/tomsmi321">
+                <img class="github-img" src="./assets/github-img.svg" alt="github link">
+            </a>
         </div>
         <div class="codepen-container">
-            <img class="codepen-img" src="./assets/codepen-img.svg">
+            <a href="https://codepen.io/tomsmi321/">
+                <img class="codepen-img" src="./assets/codepen-img.svg" alt="codepen link">
+            </a>
         </div>
     </section>
 </body>
