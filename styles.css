@@ -23,6 +23,7 @@
     font-family: var(--main-font);
     list-style: none;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 /* default styling for h1, h2 and <p> elements */
@@ -110,7 +111,7 @@ header {
     grid-template-areas:
         ". h . . . . . ."
         ". h . . . . . ."
-        ". h . s . . . ."
+        ". h . s s s . ."
         ". h . bd bd bd bd ."
         ". h . . . . . ."
         ". h . . . bx bx ."
@@ -275,13 +276,13 @@ header {
     min-width: 100vw;
     background-color: var(--main-white-background);
     display: grid;
-    grid-template-columns: 1fr 0.5fr max-content 1fr max-content 1fr 1.5fr;
+    grid-template-columns: 1fr 0.5fr max-content 1.5fr;
     grid-template-rows: 1fr 2fr 1fr 1fr;
-    grid-template-areas: 
-        ". . . . . . ."
-        ". h cf cf cf cf ."
-        ". . li . gh cp ."
-        ". . . . . . .";
+    grid-template-areas:
+        ". . . ."
+        ". h cf ."
+        ". . ic ."
+        ". . . .";
 }
 
 
@@ -290,7 +291,7 @@ header {
     display: flex;
     flex-direction: row;
     width: 550px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     background: rgba(0, 0, 0, 0.8);
     padding: 30px;
     border-radius: 5px;
@@ -366,32 +367,27 @@ header {
 .contact-heading {
     grid-area: h;
     writing-mode: vertical-lr;
-    transform: rotate(180deg); 
+    transform: rotate(180deg);
     align-self: center;
 }
 
-.linkdin-container {
-    grid-area: li;
-    width: 4em;
-    padding-top: 2em;
+.icon-container {
+    grid-area: ic;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.github-container {
-    grid-area: gh;
-    width: 4em;
-    justify-self: end;
-    padding-top: 2em;
-}
-
+.linkdin-container,
+.github-container,
 .codepen-container {
-    grid-area: cp;
     width: 4em;
-    justify-self: end;
     padding-top: 2em;
 }
 
-.linkdin-img:hover, 
-.github-img:hover, 
+
+.linkdin-img:hover,
+.github-img:hover,
 .codepen-img:hover {
     transform: scale(1.3);
     transition: .25s ease-in;
