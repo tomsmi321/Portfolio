@@ -3,7 +3,10 @@
     /* Colors */
     --main-black-background: #222725;
     --main-white-background: #FFFBFE;
-    --red-line: #FF525A;
+    --main-grey: #CECCCC;
+    --secondary-grey: #57737A;
+    --main-yellow: #ffa42d;
+    --main-pink: #af3fac;
     --text-black: #000000;
     --text-white: #FFFBFE;
     /* Fonts types*/
@@ -23,7 +26,16 @@
     font-family: var(--main-font);
     list-style: none;
     scroll-behavior: smooth;
-    box-sizing: border-box;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/* Remove scrollbar space */
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 /* default styling for h1, h2 and <p> elements */
@@ -57,6 +69,10 @@ header {
     grid-area: header;
 }
 
+/* .nav-wrapper {
+    padding: 2em;
+} */
+
 /* place nav items in flexbox */
 .nav {
     display: flex;
@@ -64,6 +80,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     background-color: var(--main-white-background);
+    padding: 2em;
 }
 
 /* style nav items */
@@ -72,7 +89,39 @@ header {
     color: var(--text-black);
     font-family: var(--main-font);
     font-weight: 300;
-    font-size: var(--h3-subheading-size);
+    font-size: var(--h2-subheading-size);
+}
+
+
+.nav a {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+}
+
+@media screen and (max-width: 667px) {
+    .nav a {
+        font-size: 1.2em;
+        justify-content: space-between;
+    }
+
+    .nav {
+        padding: 0.5em;
+        padding-top: 2em;
+    }
 }
 
 /* ----------HOME---------- */
@@ -83,11 +132,12 @@ header {
     background-color: var(--main-white-background);
 }
 
+
 /* Make the homepage art svg take up the whole container */
 .home-art-container {
     width: 100%;
-    background: var(--main-white-background);
     margin: 0 auto;
+
 }
 
 /* Required to make image fluid in IE */
@@ -99,6 +149,25 @@ header {
     padding-top: 3rem;
 }
 
+.mobile-img {
+    display: none;
+}
+
+@media screen and (max-width: 667px) {
+    .main-img {
+        display: none;
+    }
+
+    .mobile-img {
+        display: inline;
+        padding-top: 30%;
+    }
+
+    .mobile-img:not(.png) {
+        width: 100%;
+    }
+}
+
 /* ----------ABOUT---------- */
 .about {
     background-color: var(--main-black-background);
@@ -107,13 +176,12 @@ header {
     min-width: 100vw;
     display: grid;
     grid-template-columns: 0.5fr, 0.5fr, 0.5fr, 1fr, 1fr, 1fr, 1fr, 0.5fr;
-    grid-template-rows: 0.5fr, 1fr, 0.5fr, 1fr, 1fr, 1fr, 0.5fr;
+    grid-template-rows: 0.5fr, 1fr, 0.5fr, 1fr, 1000px, 0.5fr;
     grid-template-areas:
         ". h . . . . . ."
         ". h . . . . . ."
         ". h . s s s . ."
         ". h . bd bd bd bd ."
-        ". h . . . . . ."
         ". h . . . bx bx ."
         ". h . . . . . .";
 
@@ -136,8 +204,9 @@ header {
     font-size: 1.2em;
     font-family: var(--main-font);
     font-weight: 400;
-    padding-top: 0.5em;
+    padding-top: 2em;
     padding-bottom: 0.5em;
+    align-self: end;
     grid-area: s;
 }
 
@@ -155,8 +224,7 @@ header {
     border: 3px solid #FFFBFE;
     font-family: var(--main-font);
     font-weight: 400;
-    margin-right: 2em;
-    margin-bottom: 1em;
+    margin: 2em;
     padding: 0.2em;
     grid-area: bx;
 }
@@ -168,52 +236,79 @@ header {
     min-width: 100vw;
     background-color: var(--main-white-background);
     display: grid;
-    grid-template-columns: 0.5fr, 2fr, 1fr, 0.5fr;
-    grid-template-rows: 0.5fr, 1fr, 1fr, 1fr, 1fr, 0.5fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr, 0.1fr;
     grid-template-areas:
-        ". . . ."
-        ". . pc ."
-        ". p1 . ."
-        ". p2 . ."
-        ". p3 . ."
-        ". . . .";
+        "ph ph "
+        "p1 . "
+        "p2 . "
+        "p3 . "
+        ". . ";
 }
 
 .projects-heading-container {
-    grid-area: pc;
+    grid-area: ph;
+    justify-self: end;
     padding-right: 2em;
     padding-top: 2em;
 }
 
 .project1 {
     grid-area: p1;
-    border-left: 0.8em solid #FF525A;
-    margin-left: 2em;
-    margin-bottom: 3em;
-    margin-top: 1em;
-    padding-left: 0.2em;
+    padding: 2em;
 }
 
 .project2 {
     grid-area: p2;
-    border-left: 0.8em solid #FF525A;
-    margin-left: 2em;
-    margin-bottom: 3em;
-    padding-left: 0.2em;
+    padding: 2em;
 }
 
 .project3 {
     grid-area: p3;
-    border-left: 0.8em solid #FF525A;
-    margin-left: 2em;
-    margin-bottom: 2em;
-    padding-left: 0.2em;
+    padding: 2em;
 }
 
-.projects-heading {
-    width: 327px;
-    background: var(--main-white-background);
+.circle {
+    width: 5vw;
+    height: 5vw;
+    background-color: var(--main-pink);
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    margin: 0.8em;
 }
+
+#circle1:hover {
+    background-color: #5E2BFF;
+}
+
+#circle2:hover {
+    background-color: #C04CFD;
+}
+
+#circle3:hover {
+    background-color: #FF715B;
+}
+
+@media screen and (max-width: 667px) {
+    .projects {
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 0.1fr, 1fr, 1fr, 1fr, 1fr, 0.1fr;
+        grid-template-areas:
+            ". . ."
+            "ph ph ph "
+            "p1 p1 p1"
+            "p2 p2 p2"
+            "p3 p3 p3"
+            ". . .";
+    }
+
+    .projects-heading-container {
+        justify-self: center;
+        padding-right: 0;
+    }
+}
+
 
 /* ----------SKILLS---------- */
 .skills {
@@ -222,20 +317,23 @@ header {
     min-width: 100vw;
     background-color: var(--main-black-background);
     display: grid;
-    grid-template-columns: 125px 0.3fr 1fr 0.5fr 1fr 1fr;
-    grid-template-rows: 0.8fr 1fr 1fr 0.5fr 125px;
+    grid-template-columns: 8vh 1fr max-content 1fr 1fr 6vw;
+    grid-template-rows: 0.5fr 0.5fr max-content 1fr 0.5fr 6vw;
     grid-template-areas:
-        "rs . h h h ."
-        "rs . f . b ."
-        "rs . f . s ."
-        "rs . . . . ."
-        "rs rb rb rb rb rb";
+        ". h h h . rs"
+        ". . . . . rs"
+        ". f . b . rs"
+        ". o o s . rs"
+        ". . . .  . rs"
+        "rb rb rb rb rb rs";
 }
 
 .skills-heading {
     grid-area: h;
     color: var(--text-white);
     padding-top: 2em;
+    padding-bottom: 2em;
+    align-self: center;
 }
 
 .skills-front {
@@ -247,26 +345,48 @@ header {
     grid-area: b;
     color: var(--text-white);
     justify-self: end;
+    margin-right: 1em;
+}
+
+.skills-other {
+    grid-area: o;
+    color: var(--text-white);
+    margin-right: 0.2em;
+    justify-self: end;
 }
 
 .square {
     grid-area: s;
     width: 150px;
     height: 150px;
-    background-color: var(--main-white-background);
+    background-color: var(--main-yellow);
+    margin-right: 1em;
     justify-self: end;
+}
+
+@media screen and (max-width: 667px) {
+    .square {
+        width: 125px;
+        height: 125px;
+    }
+}
+
+.square:hover {
+    background-color: #c916c0;
 }
 
 .rectangle-side {
     grid-area: rs;
     margin: 0;
-    background-color: var(--main-white-background);
+    background-color: var(--main-grey);
+    margin: -1px;
 }
 
 .rectangle-bottom {
     grid-area: rb;
     margin: 0;
-    background-color: var(--main-white-background);
+    background-color: var(--main-grey);
+    margin: -1px;
 }
 
 /* ----------CONTACT---------- */
@@ -276,11 +396,11 @@ header {
     min-width: 100vw;
     background-color: var(--main-white-background);
     display: grid;
-    grid-template-columns: 1fr 0.5fr max-content 1.5fr;
-    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1.3fr 0.2fr max-content 1.5fr;
+    grid-template-rows: 1fr 2fr max-content 1fr;
     grid-template-areas:
         ". . . ."
-        ". h cf ."
+        "h h cf ."
         ". . ic ."
         ". . . .";
 }
@@ -340,7 +460,7 @@ header {
 }
 
 .btn {
-    background: #ffa42d;
+    background: var(--main-yellow);
     text-align: center;
     padding: 15px;
     border-radius: 5px;
@@ -348,10 +468,10 @@ header {
     cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 667px) {
     .contact-form {
         flex-direction: column;
-        width: 250px;
+        width: 200px;
     }
 
     .msg textarea {
@@ -363,6 +483,24 @@ header {
         width: 100%;
     }
 }
+
+@media screen and (max-width: 374px) {
+    .contact {
+        grid-template-columns: 1.3fr 0.2fr max-content 1.5fr;
+        grid-template-rows: 1fr 2fr max-content 1fr;
+        grid-template-areas:
+            ". . h ."
+            ". . cf ."
+            ". . ic ."
+            ". . . .";
+    }
+
+    .contact-heading {
+        display:none
+    }
+
+}
+
 
 .contact-heading {
     grid-area: h;
