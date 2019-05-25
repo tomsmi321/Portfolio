@@ -7,6 +7,7 @@
     --secondary-grey: #57737A;
     --main-yellow: #ffa42d;
     --main-pink: #af3fac;
+    --main-blue: #1B264F;
     --text-black: #000000;
     --text-white: #FFFBFE;
     /* Fonts types*/
@@ -69,10 +70,6 @@ header {
     grid-area: header;
 }
 
-/* .nav-wrapper {
-    padding: 2em;
-} */
-
 /* place nav items in flexbox */
 .nav {
     display: flex;
@@ -122,6 +119,32 @@ header {
         padding: 0.5em;
         padding-top: 2em;
     }
+}
+
+
+/* NAVIGATION TOGGLE */
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3vw;
+}
+
+.toggle-up a,
+.toggle-down a {
+    font-size: var(--h2-subheading-size);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.toggle-down {
+    transform: rotate(180deg);
+    align-self: flex-start;
+}
+
+.toggle-up a:hover,
+.toggle-down a:hover {
+    background-color: #FF715B;
 }
 
 /* ----------HOME---------- */
@@ -175,15 +198,14 @@ header {
     min-height: 100vh;
     min-width: 100vw;
     display: grid;
-    grid-template-columns: 0.5fr, 0.5fr, 0.5fr, 1fr, 1fr, 1fr, 1fr, 0.5fr;
-    grid-template-rows: 0.5fr, 1fr, 0.5fr, 1fr, 1000px, 0.5fr;
+    grid-template-columns: max-content, 1fr, 1fr, 1fr, 1fr;
+    grid-template-rows: 0.5fr, 0.5fr, 1fr, 1fr, 0.5fr;
     grid-template-areas:
-        ". h . . . . . ."
-        ". h . . . . . ."
-        ". h . s s s . ."
-        ". h . bd bd bd bd ."
-        ". h . . . bx bx ."
-        ". h . . . . . .";
+        "h . . . ."
+        "h s s s ."
+        "h bd bd bd bd "
+        "h . . bx bx"
+        "h . . . n";
 
     overflow: hidden;
 }
@@ -195,7 +217,7 @@ header {
     writing-mode: vertical-rl;
     text-orientation: upright;
     align-self: center;
-    padding: 2em;
+    padding: 2vw;
     grid-area: h;
 }
 
@@ -214,19 +236,54 @@ header {
     color: var(--text-white);
     font-family: var(--main-font);
     font-weight: 400;
-    padding-right: 2em;
+    padding-right: 3vw;
     padding-bottom: 1em;
     grid-area: bd;
 }
 
 .about-box {
+    margin: 3vw;
+    grid-area: bx;
+    margin-bottom: 2em;
+}
+
+#about-box-text {
     color: var(--text-white);
-    border: 3px solid #FFFBFE;
     font-family: var(--main-font);
     font-weight: 400;
-    margin: 2em;
-    padding: 0.2em;
-    grid-area: bx;
+    display: inline-block;
+    border: 3px solid #FFFBFE;
+    padding: 0.5em;
+}
+
+.about-nav {
+    grid-area: n;
+    justify-self: end;
+    align-self: flex-end;
+}
+
+.toggle-a a {
+    color: var(--text-white);
+}
+
+
+
+@media screen and (max-width: 667px) {
+    .about-header {
+        align-self: start;
+        padding-top: 10vw;
+    }
+
+    .about {
+        grid-template-columns: 0.5fr, 1fr, 1fr, 1fr, 1fr;
+        grid-template-rows: 0.5fr, 0.5fr, 1fr, 1fr, 0.5fr;
+        grid-template-areas:
+            "h . . . ."
+            "h s s s ."
+            "h bd bd bd bd "
+            "h . bx bx bx"
+            "h . . . n";
+    }
 }
 
 /* ----------PROJECTS---------- */
@@ -234,7 +291,8 @@ header {
     grid-area: projects;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: var(--main-white-background);
+    background: url(./assets/proj-background2.svg) no-repeat;
+    background-position: center center;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr, 1fr, 1fr, 1fr, 0.1fr;
@@ -243,14 +301,14 @@ header {
         "p1 . "
         "p2 . "
         "p3 . "
-        ". . ";
+        ". pn";
 }
 
 .projects-heading-container {
     grid-area: ph;
     justify-self: end;
-    padding-right: 2em;
-    padding-top: 2em;
+    padding-right: 3vw;
+    padding-top: 3vw;
 }
 
 .project1 {
@@ -271,15 +329,15 @@ header {
 .circle {
     width: 5vw;
     height: 5vw;
-    background-color: var(--main-pink);
+    background-color: var(--main-blue);
     border-radius: 50%;
     float: left;
     shape-outside: circle();
-    margin: 0.8em;
+    margin-right: 0.8em;
 }
 
 #circle1:hover {
-    background-color: #5E2BFF;
+    background-color: #2FBC70;
 }
 
 #circle2:hover {
@@ -290,8 +348,22 @@ header {
     background-color: #FF715B;
 }
 
+.projects-nav {
+    grid-area: pn;
+    justify-self: end;
+    align-self: flex-end;
+}
+
+.proj-nav {
+    color: var(--text-black);
+}
+
+
+
 @media screen and (max-width: 667px) {
     .projects {
+        background: none;
+        background-color: var(--main-white-background);
         grid-template-columns: 2fr 1fr 1fr;
         grid-template-rows: 0.1fr, 1fr, 1fr, 1fr, 1fr, 0.1fr;
         grid-template-areas:
@@ -317,14 +389,14 @@ header {
     min-width: 100vw;
     background-color: var(--main-black-background);
     display: grid;
-    grid-template-columns: 8vh 1fr max-content 1fr 1fr 6vw;
-    grid-template-rows: 0.5fr 0.5fr max-content 1fr 0.5fr 6vw;
+    grid-template-columns: 2em 1fr max-content 1fr 1fr 7vw;
+    grid-template-rows: 0.5fr 0.5fr max-content 1fr 0.5fr 7vw;
     grid-template-areas:
         ". h h h . rs"
         ". . . . . rs"
         ". f . b . rs"
         ". o o s . rs"
-        ". . . .  . rs"
+        ". . . .  sn rs"
         "rb rb rb rb rb rs";
 }
 
@@ -380,6 +452,10 @@ header {
     margin: 0;
     background-color: var(--main-grey);
     margin: -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .rectangle-bottom {
@@ -388,6 +464,22 @@ header {
     background-color: var(--main-grey);
     margin: -1px;
 }
+
+.skills-nav {
+    grid-area: sn;
+}
+
+.skil-nav {
+    color: var(--text-white);
+}
+
+@media screen and (max-width: 667px) {
+    .skills {
+        grid-template-columns: 2em 1fr max-content 1fr 1fr 10vw;
+        grid-template-rows: 0.5fr 0.5fr max-content 1fr 0.5fr 10vw;
+    }
+}
+
 
 /* ----------CONTACT---------- */
 .contact {
@@ -402,9 +494,12 @@ header {
         ". . . ."
         "h h cf ."
         ". . ic ."
-        ". . . .";
+        ". . . cn";
 }
 
+.contact-heading-mobile {
+    display: none;
+}
 
 .contact-form {
     grid-area: cf;
@@ -489,14 +584,21 @@ header {
         grid-template-columns: 1.3fr 0.2fr max-content 1.5fr;
         grid-template-rows: 1fr 2fr max-content 1fr;
         grid-template-areas:
-            ". . h ."
+            ". . mh ."
             ". . cf ."
             ". . ic ."
             ". . . .";
     }
 
     .contact-heading {
-        display:none
+        display: none
+    }
+
+    .contact-heading-mobile {
+        display: block;
+        grid-area: mh;
+        justify-self: center;
+        align-self: flex-end;
     }
 
 }
@@ -529,4 +631,9 @@ header {
 .codepen-img:hover {
     transform: scale(1.3);
     transition: .25s ease-in;
+}
+
+.contact-nav {
+    grid-area: cn;
+    justify-self: end;
 }
