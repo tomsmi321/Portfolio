@@ -163,18 +163,18 @@
     </section>
 
     <section class="contact" id="contact">
-        <div class="contact-form">
+        <form class="contact-form" action="https://formspree.io/tomsmi321@gmail.com" method="POST">
             <div class="input-fields">
-                <input type="text" class="input" placeholder="first name">
-                <input type="text" class="input" placeholder="last name">
-                <input type="text" class="input" placeholder="email">
-                <input type="text" class="input" placeholder="subject">
+                <input type="text" class="input" name="fname" placeholder="first name">
+                <input type="text" class="input" name="lname" placeholder="last name">
+                <input type="text" class="input" name="email" placeholder="email">
+                <input type="text" class="input" name="subject" placeholder="subject">
             </div>
             <div class="msg">
-                <textarea placeholder="message"></textarea>
-                <div class="btn">send</div>
+                <textarea name="message" placeholder="message"></textarea>
+                <button type="submit" class="btn" value="send">submit</button>
             </div>
-        </div>
+        </form>
 
         <div class="contact-heading">
             <h1>contact.</h1>

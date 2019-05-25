@@ -372,12 +372,12 @@ header {
             "p1 p1 p1"
             "p2 p2 p2"
             "p3 p3 p3"
-            ". . .";
+            ". . pn";
     }
 
     .projects-heading-container {
         justify-self: center;
-        padding-right: 0;
+        padding-right: none;
     }
 }
 
@@ -519,6 +519,10 @@ header {
     margin-right: 4%;
 }
 
+.msg {
+    margin-right: 4%;
+}
+
 .input-fields,
 .msg {
     width: 48%;
@@ -534,6 +538,7 @@ header {
     color: #c5ecfd;
     width: 100%;
 }
+
 
 .msg textarea {
     height: 212px;
@@ -555,7 +560,9 @@ header {
 }
 
 .btn {
+    display: inline-block;
     background: var(--main-yellow);
+    width: 109%;
     text-align: center;
     padding: 15px;
     border-radius: 5px;
@@ -636,4 +643,8 @@ header {
 .contact-nav {
     grid-area: cn;
     justify-self: end;
+}
+
+.con-nav {
+    color: var(--text-black);
 }
