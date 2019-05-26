@@ -26,7 +26,7 @@ My site consists of five pages all accessible from a single page scroll. The use
 ![figma-board1 2019-05-26 at 15 45 26](https://user-images.githubusercontent.com/48931725/58377910-805b4880-7fcd-11e9-82b8-7ebb51f919b3.png)
 
 
-*Target Audience
+### Target Audience
 The intended audience is anyone that wants to reach out to me and communicate regarding web development. The most likely people to view it would be future employers and clients.
 
 ### Tech Stack
@@ -58,8 +58,8 @@ I mocked up both a desktop and mobile design in figma for the site which formed 
 ### Usability Considerations
 I really wanted a site that was easily navigable and each section clearly defined and readable. Since I was using high contrast colors and lots of empty space I think this helped. I initially has some issues with the mobile version as things were getting too crammed up and ruining the aesthetic. Using grid and media queries to move elements around as the screen resized helped me fix this.
 
-### Design Planning
-*Project Plan and Timeline
+
+### Project Plan and Timeline
 We were given a little under two weeks to complete the project which was a reasonable amount of time. I laid out a basic plan to get to an MVP with lorem ipsum fill text within one week then spend the following week tweaking the site and writing the content. I spent an entire day on ideation and figuring out what my influences and idea sources were going to be. This included building my pinterest board, color pallet, and looking at other sites and visual artists. After this I spent one and a half days designing my wireframe in figma most of which was done in a single night. My idea was to keep it simple and have no photos and no color gradients. This saved me considerable time as elements were easy to place and alter in figma on each design iteration. From here I spend the next two days coding the site, starting with clearly working out my grid for each page and getting the basic structures in place using fill text. After the two days I had a basic site that worked pretty well for desktop but was a bit qwirky in mobile. I had several days where I had to do other work so I put it on the shelf for a while. The final two days I spent hours in Chrome's inspect element tool adjusting my grids and writing CSS media queries to get the mobile version right. Finally I was happy with it and I set to writing all the content which I completed in around half a day. By breaking the tasks down into sections and focusing on the MVP I was able to manage time effectively and get everything done with time to spare.
 ![Trello 2019-05-14 at 10 55 51](https://user-images.githubusercontent.com/48931725/58378009-cf55ad80-7fce-11e9-9c71-23664f8daffb.png)
 
