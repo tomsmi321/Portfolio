@@ -24,8 +24,8 @@ My site consists of five pages all accessible from a single page scroll. The use
 
 ### Screenshots
 ![figma-board1 2019-05-26 at 15 45 26](https://user-images.githubusercontent.com/48931725/58377910-805b4880-7fcd-11e9-82b8-7ebb51f919b3.png)
+![mobile 2019-05-26 at 16 55 53](https://user-images.githubusercontent.com/48931725/58378438-39725080-7fd7-11e9-80c0-507b66c21f60.png)
 
-![color_flash 2019-05-14 at 16 13 41](https://user-images.githubusercontent.com/48931725/58377959-f65faf80-7fcd-11e9-982e-e640723947a9.png)
 
 
 ### Target Audience
